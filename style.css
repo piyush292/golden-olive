@@ -1,0 +1,1281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --bg: #FBF6E9;
+    --surface: #F3EBD3;
+    --text: #1F1F1B;
+    --text-muted: #5B5F4A;
+    --olive-deep: #2F3A1E;
+    --olive: #4A5A28;
+    --olive-hover: #3A4720;
+    --gold: #C9A24D;
+    --link: #8A6A1F;
+    --border: #E2D6B5;
+}
+
+header {
+    width: 100vw;
+
+}
+
+.main {
+    height: 75px;
+    width: 100vw;
+    background: var(--olive-deep);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+    display: block;
+    z-index: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-item a {
+    color: var(--bg);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+    font-size: large;
+}
+
+.nav-item a:hover {
+    color: var(--gold);
+}
+
+.nav-item a.active {
+    color: var(--gold);
+}
+
+.nav-item a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: -4px;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+.nav-item a:hover::after,
+.nav-item a:active::after {
+    width: 100%;
+}
+
+.nav-item button {
+    border-radius: 12px;
+    border: 1px solid var(--gold);
+    padding: 10px 24px;
+    color: var(--olive-deep);
+    background: var(--gold);
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-item button:hover {
+    background: #dfc57e;
+    transform: translateY(-3px);
+    /* optional: button thoda upar uthta hai */
+}
+
+.hero-cont {
+    height: 89.2vh;
+    width: 100vw;
+    background:
+        linear-gradient(to right, rgba(47, 58, 30, 0.85), rgba(47, 58, 30, 0.3)),
+        url("assets/Sunset Dining in a Mediterranean Retreat.png") center/cover no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    padding: 250px 8%;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+    text-align: left;
+}
+
+.hero-tagline {
+    color: var(--gold);
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero-cont h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--bg);
+    margin-bottom: 24px;
+}
+
+.hero-cont h1 span {
+    color: #E8CF8B;
+}
+
+.hero-text {
+    font-size: 1.05rem;
+    font-weight: 350;
+    line-height: 1.8;
+    color: var(--surface);
+    max-width: 480px;
+    margin-bottom: 36px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--olive-deep);
+    border: 1px solid var(--gold);
+}
+
+.btn-gold:hover {
+    background: #E8CF8B;
+    border-color: #E8CF8B;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--bg);
+    border: 1px solid var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--bg);
+    color: var(--olive-deep);
+    border-color: var(--bg);
+}
+
+button,
+a,
+input {
+    font-family: inherit;
+}
+
+hr {
+    width: 100vw;
+}
+
+.container {
+    max-width: 1200px;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.about-preview {
+    background: var(--surface);
+    width: 100vw;
+
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* two equal columns */
+    gap: 80px;
+    align-items: center;
+}
+
+.about-img {
+    position: relative;
+    /* anchor for the gold box */
+    width: 400px;
+    height: 500px;
+    margin-left: 40px;
+    /* room for the box that sticks out on the left */
+}
+
+.about-img img {
+    position: relative;
+    /* needed so z-index works */
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin-left: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.img-outline {
+    position: absolute;
+    top: 25px;
+    /* pushes the box down */
+    left: 66px;
+    /* pushes the box left */
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--gold);
+    border-radius: 15px;
+    z-index: 0;
+    /* box sits BEHIND the image */
+}
+
+.about-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text .section-label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+.about-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--olive-deep);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 65px;
+}
+
+.about-text p {
+    color: var(--olive);
+    font-size: 1.02rem;
+    margin-top: 25px;
+}
+
+.btn-olive {
+    color: var(--surface);
+    margin-top: 30px;
+    width: 182px;
+    padding: 12px 20px;
+    background: var(--olive-deep);
+    border: 1px solid var(--olive-deep);
+    border-radius: 25px;
+}
+
+.btn-olive:hover {
+    width: 200px;
+}
+
+.btn-olive i:hover {
+    background: var(--olive-hover);
+
+}
+
+.btn-olive i {
+    transition: transform 0.3s;
+    visibility: hidden;
+}
+
+.btn-olive:hover i {
+    transform: translateX(6px);
+    margin-left: 30px;
+    visibility: visible;
+}
+
+.dishes {
+    background: var(--surface);
+    padding: 100px 0;
+    width: 100vw;
+}
+
+.lable-first,
+.section-title,
+.section-sub {
+    text-align: center;
+}
+
+.lable-first {
+    color: var(--gold);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    color: var(--olive-deep);
+    font-size: 4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.section-sub {
+    color: var(--olive);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+.dish-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* clips the image to rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.dish-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.dish-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(47, 58, 30, 0.15);
+    border-color: var(--gold);
+}
+
+.dish-img {
+    height: 100px;
+    overflow: hidden;
+}
+
+.dish-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.dish-card:hover .dish-img img {
+    transform: scaleY(1.08);
+    /* slow zoom on hover */
+}
+
+.dish-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dish-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--olive-deep);
+    margin-bottom: 8px;
+}
+
+.dish-info p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.dish-bottom {
+    margin-top: auto;
+    /* pushes price + Order to the bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--link);
+}
+
+.dish-link {
+    color: var(--olive);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.dish-link:hover {
+    color: var(--link);
+}
+
+.why-us {
+    background: var(--surface);
+    padding: 10px 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.lable-1,
+.why-us-title,
+.why-us-sub {
+    text-align: center;
+}
+
+.lable-1 {
+    color: var(--gold);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.why-us-title {
+    color: var(--olive-deep);
+    font-size: 4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.why-us-sub {
+    color: var(--olive);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.us-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+.us-card {
+    background: var(--olive);
+    width: 370px;
+    height: 300px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* clips the image to rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+
+.us-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(47, 58, 30, 0.15);
+    border-color: var(--gold);
+}
+.us-card .us-img{
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ margin-top: 15px;
+}
+.us-card img{
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+.us-card:hover .dish-img img {
+    transform: scaleY(1.08);
+    /* slow zoom on hover */
+}
+
+.us-info {
+    padding: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex: 1;
+}
+.us-info h3{
+   margin-top: -66px;
+   font-size: 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-weight: 700;
+}
+.us-info p{
+    margin-top: 20px;
+    color: var(--surface);
+     font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.testimonials {
+    background: var(--bg);              /* ivory, so it differs from the cream sections above */
+    padding: 90px 0;
+}
+
+.t-label {
+    text-align: center;
+    color: var(--link);                 /* golden brown, readable on ivory */
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.t-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: var(--olive-deep);
+    margin-top: 6px;
+}
+
+.t-sub {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 12px;
+}
+
+.t-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1150px;
+    margin: 55px auto 0;
+    padding: 0 20px;
+}
+
+.t-card {
+    position: relative;   
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 34px 30px 28px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.t-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(47, 58, 30, 0.15);
+    border-color: var(--gold);
+}
+
+.t-quote {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    font-size: 2.4rem;
+    color: var(--gold);
+    opacity: 0.3;                       /* faded gold quote mark */
+}
+
+.t-stars {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--olive-deep);
+    margin-bottom: 24px;
+}
+
+.t-user {
+    margin-top: auto;                   /* pushes the user row to the bottom of every card */
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.t-user img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+}
+
+.t-user h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--olive-deep);
+}
+
+.t-user span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* ---------- Tablet and mobile ---------- */
+@media (max-width: 992px) {
+    .t-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .t-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .t-title {
+        font-size: 2.6rem;
+    }
+}
+.reserve-banner {
+    background:
+        linear-gradient(rgba(47, 58, 30, 0.9), rgba(47, 58, 30, 0.9)),
+        url("assets/Candlelit\ Mediterranean\ Dinner\ Table.png") center/cover no-repeat;
+    padding: 90px 20px;
+    text-align: center;
+   
+}
+
+.reserve-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: var(--bg);
+    margin: 8px 0 14px;
+}
+
+.reserve-text {
+    color: var(--surface);
+    margin-bottom: 32px;
+}
+.reserve-banner .btn i {
+    margin-right: 8px;
+}
+.reserve-banner .btn-outline  {
+    transition: transform 0.3s;
+}
+
+.reserve-banner .btn-outline:hover  {
+    transform: rotate(15deg);
+}
+.reserve-banner .btn-outline i {
+    transition: transform 0.3s;
+}
+
+.reserve-banner .btn-outline:hover i {
+    transform: rotate(-17deg);
+}
+.reserve-banner .hero-buttons {
+    justify-content: center;   /* centers the two buttons */
+}
+/* ---------- FOOTER ---------- */
+.footer {
+    background: var(--olive-deep);
+    color: var(--surface);
+    padding: 80px 0 30px;
+    width: 100vw;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    height: 90px;
+    width: auto;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.footer-about {
+    color: var(--surface);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 300px;
+    margin-bottom: 24px;
+}
+
+/* social icons */
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gold);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.footer-social a:hover {
+    background: var(--gold);
+    color: var(--olive-deep);
+    transform: translateY(-3px);
+}
+
+/* headings */
+.footer-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 26px;
+    position: relative;
+}
+
+.footer-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+}
+
+/* lists */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-links a {
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    transform: translateX(4px);
+}
+
+/* contact */
+.footer address {
+    font-style: normal;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-contact i {
+    color: var(--gold);
+    margin-top: 4px;
+    width: 16px;
+    text-align: center;
+}
+
+/* hours */
+.footer-hours li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-hours span {
+    display: block;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* bottom bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 24px 20px 0;
+    border-top: 1px solid rgba(201, 162, 77, 0.3);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--surface);
+    opacity: 0.75;
+    font-size: 0.85rem;
+}
+/* =====================================================
+   RESERVATION PAGE - loads after style.css
+   ===================================================== */
+
+/* ---------- Banner ---------- */
+.res-hero {
+    background:
+        linear-gradient(rgba(47, 58, 30, 0.88), rgba(47, 58, 30, 0.88)),
+        url("assets/Candlelit\ Mediterranean\ Dinner\ Table.png") center/cover no-repeat;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.res-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 600;
+    color: var(--bg);
+    margin: 8px 0 14px;
+}
+
+.res-hero-text {
+    color: var(--surface);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ---------- Layout ---------- */
+.res-section {
+    background: var(--surface);
+    padding: 80px 20px;
+}
+
+.res-wrap {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    max-width: 1150px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* ---------- Form card ---------- */
+.res-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.res-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--olive-deep);
+    margin-bottom: 28px;
+}
+
+.res-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.res-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.res-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.res-field label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--olive-deep);
+}
+
+.res-field label span {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.res-field input,
+.res-field select,
+.res-field textarea {
+    width: 100%;
+    padding: 13px 16px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.res-field textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.res-field input:focus,
+.res-field select:focus,
+.res-field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
+}
+
+.res-submit {
+    width: 100%;
+    margin-top: 6px;
+    padding: 16px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.res-submit i {
+    margin-right: 8px;
+}
+
+/* ---------- Info card ---------- */
+.res-info {
+    background: var(--olive-deep);
+    border-radius: 16px;
+    padding: 40px 34px;
+}
+
+.res-heading-light {
+    color: var(--gold);
+}
+
+.res-info-block {
+    padding: 20px 0;
+    border-top: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+.res-info-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.res-info-block h3 i {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.res-info-block p {
+    color: var(--surface);
+    font-size: 0.93rem;
+    line-height: 1.7;
+}
+
+.res-info-block p span {
+    display: inline-block;
+    min-width: 80px;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.res-info-block a {
+    color: var(--surface);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.res-info-block a:hover {
+    color: var(--gold);
+}
+
+
+/* ---------- Tablet (max 992px) ---------- */
+@media (max-width: 992px) {
+    .res-wrap {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+
+    .res-section {
+        padding: 60px 20px;
+    }
+}
+
+/* ---------- Phone (max 560px) ---------- */
+@media (max-width: 560px) {
+    .res-hero {
+        padding: 64px 20px;
+    }
+
+    .res-section {
+        padding: 40px 16px;
+    }
+
+    .res-card {
+        padding: 28px 20px;
+    }
+
+    .res-info {
+        padding: 30px 22px;
+    }
+
+    .res-heading {
+        font-size: 1.7rem;
+    }
+
+    /* date/time and guests/occasion stack on small phones */
+    .res-row {
+        grid-template-columns: 1fr;
+    }
+
+    .res-info-block p span {
+        display: block;
+    }
+}
+/* ---------- Footer responsive ---------- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: 56px 0 24px;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-logo,
+    .footer-about {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-contact li {
+        justify-content: center;
+    }
+}
+/* ---------- Navbar: media query only ---------- */
+@media (max-width: 900px) {
+    .main {
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 20px;
+    }
+
+    .logo img { height: 70px; }
+
+    .nav-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 24px;
+    }
+
+    .nav-item a { font-size: 1rem; }
+
+    .nav-item button {
+        padding: 8px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 560px) {
+    .logo img { height: 56px; }
+
+    .nav-item { gap: 10px 16px; }
+    .nav-item a { font-size: 0.9rem; }
+
+    .nav-item button {
+        padding: 6px 16px;
+        font-size: 14px;
+    }
+}
+/* =====================================================
+   RESPONSIVE FINAL - media queries only (no JS)
+   Paste at the very END of style.css
+   ===================================================== */
+
+/* ---------- Global fixes ---------- */
+html { scroll-behavior: smooth; }
+img { max-width: 100%; }
+
+header, .main, .hero-cont, hr, .container, .about-preview,
+.dishes, .why-us, .footer { width: 100%; }
+
+.container { height: auto; min-height: 100vh; }
+.why-us { height: auto; min-height: 100vh; padding: 60px 0; }
+.us-card { width: 100%; height: auto; min-height: 300px; }
+
+.hero-cont h1  { font-size: clamp(2.4rem, 6vw, 4.5rem); }
+.about-text h2 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.15; }
+.section-title,
+.why-us-title  { font-size: clamp(2.2rem, 5vw, 4rem); }
+.t-title       { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.reserve-title { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+
+.hero-buttons { flex-wrap: wrap; }
+
+/* ---------- Laptop (max 1100px) ---------- */
+@media (max-width: 1100px) {
+    .main { padding: 0 30px; }
+    .nav-item { gap: 30px; }
+    .food-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Tablet (max 992px) ---------- */
+@media (max-width: 992px) {
+    .container { min-height: auto; padding: 80px 20px; margin: 0 auto; }
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+    .about-img {
+        width: min(340px, calc(100% - 24px));
+        height: 420px;
+        margin: 0 auto;
+    }
+    .about-img img { margin-left: 0; }
+    .img-outline { left: 16px; top: 16px; }
+    .about-text { align-items: center; text-align: center; }
+
+    .why-us { min-height: auto; padding: 70px 0; }
+    .us-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        gap: 28px;
+        margin-top: 45px;
+    }
+
+    .dishes, .testimonials { padding: 70px 0; }
+}
+
+/* ---------- Navbar wraps (max 900px) ---------- */
+@media (max-width: 900px) {
+    .main {
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 20px;
+    }
+    .logo img { height: 70px; }
+    .nav-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 24px;
+    }
+    .nav-item a { font-size: 1rem; }
+    .nav-item button { padding: 8px 20px; font-size: 15px; }
+}
+
+/* ---------- Large phone (max 768px) ---------- */
+@media (max-width: 768px) {
+    .hero-cont {
+        height: auto;
+        min-height: 85vh;
+        padding: 80px 6%;
+        background:
+            linear-gradient(rgba(47, 58, 30, 0.8), rgba(47, 58, 30, 0.6)),
+            url("assets/Sunset Dining in a Mediterranean Retreat.png") center/cover no-repeat;
+    }
+    .hero-content { max-width: 100%; }
+    .hero-tagline { font-size: 0.9rem; letter-spacing: 3px; }
+    .hero-text { font-size: 1rem; }
+
+    .lable-first, .lable-1 { font-size: 1rem; letter-spacing: 3px; }
+    .section-sub, .why-us-sub, .t-sub { padding: 0 20px; font-size: 0.95rem; }
+    .t-label { letter-spacing: 3px; }
+
+    .reserve-banner { padding: 70px 20px; }
+}
+
+/* ---------- Phone (max 560px) ---------- */
+@media (max-width: 560px) {
+    .logo img { height: 56px; }
+    .nav-item { gap: 10px 16px; }
+    .nav-item a { font-size: 0.9rem; }
+    .nav-item button { padding: 6px 16px; font-size: 14px; }
+
+    .hero-buttons { flex-direction: column; width: 100%; max-width: 320px; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+    .reserve-banner .hero-buttons { margin: 0 auto; }
+
+    .food-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .about-img { height: 380px; }
+
+    .container { padding: 60px 20px; }
+    .dishes, .testimonials { padding: 56px 0; }
+    .t-card { padding: 28px 22px 24px; }
+    .t-text { font-size: 1.2rem; }
+}

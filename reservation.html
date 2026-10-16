@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Table | Golden Olive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reservation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/Golden Olive Icon with Leaf.png?v=5">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav class="main">
+            <div class="logo">
+                <img src="assets/Golden_Olive_Luxury_Emblem-removebg-preview.png" alt="Golden Olive logo">
+            </div>
+            <div class="nav-item">
+                <a href="index.html">Home</a>
+                <a href="#">Menu</a>
+                <a href="about.html">About</a>
+                <a href="reservation.html" class="active">Reservation</a>
+                <button>Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- page banner -->
+    <section class="res-hero">
+        <p class="lable-first">Book With Us</p>
+        <h1 class="res-hero-title">Reserve Your Table</h1>
+        <p class="res-hero-text">Tell us when you are coming and we will have everything ready.</p>
+    </section>
+
+    <!-- reservation form + info -->
+    <section class="res-section">
+        <div class="res-wrap">
+
+            <!-- Form card -->
+            <div class="res-card">
+                <h2 class="res-heading">Booking Details</h2>
+
+                <!-- Replace action="#" with your form service URL (Formspree, Getform, backend etc.) -->
+                <form class="res-form" action="#" method="post">
+
+                    <div class="res-row">
+                        <div class="res-field">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="res-field">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" required>
+                        </div>
+                    </div>
+
+                    <div class="res-field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="res-row">
+                        <div class="res-field">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="res-field">
+                            <label for="time">Time</label>
+                            <select id="time" name="time" required>
+                                <option value="" disabled selected>Select time</option>
+                                <option>12:00 PM</option>
+                                <option>1:00 PM</option>
+                                <option>2:00 PM</option>
+                                <option>3:00 PM</option>
+                                <button type="submit" class="btn btn-gold res-submit">
+    <i class="fa-regular fa-calendar-check"></i> Confirm Reservation
+</button>
+</form>
+</div>
+</div>
+</section>
+</body>
+</html>
