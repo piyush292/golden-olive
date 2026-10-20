@@ -1,0 +1,219 @@
+
+.res-hero {
+    background:
+        linear-gradient(rgba(47, 58, 30, 0.88), rgba(47, 58, 30, 0.88)),
+        url("assets/Candlelit\ Mediterranean\ Dinner\ Table.png") center/cover no-repeat;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.res-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 600;
+    color: var(--bg);
+    margin: 8px 0 14px;
+}
+
+.res-hero-text {
+    color: var(--surface);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ---------- Layout ---------- */
+.res-section {
+    background: var(--surface);
+    padding: 80px 20px;
+}
+
+.res-wrap {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    max-width: 1150px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* ---------- Form card ---------- */
+.res-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.res-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--olive-deep);
+    margin-bottom: 28px;
+}
+
+.res-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.res-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.res-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.res-field label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--olive-deep);
+}
+
+.res-field label span {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.res-field input,
+.res-field select,
+.res-field textarea {
+    width: 100%;
+    padding: 13px 16px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.res-field textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.res-field input:focus,
+.res-field select:focus,
+.res-field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
+}
+
+.res-submit {
+    width: 100%;
+    margin-top: 6px;
+    padding: 16px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.res-submit i {
+    margin-right: 8px;
+}
+
+/* ---------- Info card ---------- */
+.res-info {
+    background: var(--olive-deep);
+    border-radius: 16px;
+    padding: 40px 34px;
+}
+
+.res-heading-light {
+    color: var(--gold);
+}
+
+.res-info-block {
+    padding: 20px 0;
+    border-top: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+.res-info-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.res-info-block h3 i {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.res-info-block p {
+    color: var(--surface);
+    font-size: 0.93rem;
+    line-height: 1.7;
+}
+
+.res-info-block p span {
+    display: inline-block;
+    min-width: 80px;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.res-info-block a {
+    color: var(--surface);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.res-info-block a:hover {
+    color: var(--gold);
+}
+
+/* ---------- Tablet (max 992px) ---------- */
+@media (max-width: 992px) {
+    .res-wrap {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+
+    .res-section {
+        padding: 60px 20px;
+    }
+}
+
+/* ---------- Phone (max 560px) ---------- */
+@media (max-width: 560px) {
+    .res-hero {
+        padding: 64px 20px;
+    }
+
+    .res-section {
+        padding: 40px 16px;
+    }
+
+    .res-card {
+        padding: 28px 20px;
+    }
+
+    .res-info {
+        padding: 30px 22px;
+    }
+
+    .res-heading {
+        font-size: 1.7rem;
+    }
+
+    /* date/time and guests/occasion stack on small phones */
+    .res-row {
+        grid-template-columns: 1fr;
+    }
+
+    .res-info-block p span {
+        display: block;
+    }
+}
