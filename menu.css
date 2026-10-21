@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg: #FBF6E9;
+    --surface: #F3EBD3;
+    --text: #1F1F1B;
+    --text-muted: #5B5F4A;
+    --olive-deep: #2F3A1E;
+    --olive: #4A5A28;
+    --olive-hover: #3A4720;
+    --gold: #C9A24D;
+    --link: #8A6A1F;
+    --border: #E2D6B5;
+}
+
+body {
+    background: var(--surface);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+.menu-cont {
+    height: 50vh;
+    width: 100vw;
+    background:
+        linear-gradient(to right, rgba(47, 58, 30, 0.85), rgba(47, 58, 30, 0.3)),
+        url("assets/Candlelit\ Mediterranean\ Dinner\ Table.png") center/cover no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    padding: 60px 6%;
+    align-items: center;
+}
+
+.menu-content {
+    max-width: 650px;
+    text-align: left;
+}
+
+.menu-tagline {
+    color: var(--gold);
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.menu-cont h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--bg);
+    margin-bottom: 24px;
+}
+
+.menu-text {
+    font-size: 1.4rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 650;
+    line-height: 1.4;
+    color: var(--surface);
+    max-width: 500px;
+    margin-bottom: 36px;
+}
+
+.bnt {
+    height: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.bnt-center button {
+    margin-left: 20px;
+    padding: 10px 25px;
+    border-radius: 16px;
+    border: 2px solid var(--gold);
+    background: transparent;
+    font-size: 1.02rem;
+    font-weight: 500;
+     transition: 0.4s;
+     gap: 12px;
+      display: flex;
+    flex-wrap: wrap;
+}
+.bnt-center button:hover{
+    background:var(--gold);
+    color: var(--bg);
+}
+.menu-start{
+    margin-top: 3%;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 70vh;
+}
+.menutitle-gold{
+     color: var(--gold);
+    font-size: 18px;
+    margin-top: 70px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-left: 40px;
+}
+.menu-card h1{
+    margin-left: 40px;
+    margin-bottom: -50px;
+
+    
+}
+.dishes {
+    background: var(--surface);
+    padding: 100px 0;
+    width: 100vw;
+}
+
+.lable-first,
+.section-title,
+.section-sub {
+    text-align: center;
+}
+
+.lable-first {
+    color: var(--gold);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    color: var(--olive-deep);
+    font-size: 4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.section-sub {
+    color: var(--olive);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+    max-width: 1400px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+.dish-cards {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* clips the image to rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.dish-cards img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.dish-cards:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(47, 58, 30, 0.15);
+    border-color: var(--gold);
+    cursor: pointer;
+}
+
+.dish-imgs {
+    height: 100px;
+    overflow: hidden;
+}
+
+.dish-imgs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.dish-cards:hover .dish-imgs img {
+    transform: scaleY(1.08);
+    /* slow zoom on hover */
+}
+
+.dish-infos {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dish-infos h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--olive-deep);
+    margin-bottom: 8px;
+}
+
+.dish-infos p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.dishs-bottom {
+    margin-top: auto;
+    /* pushes price + Order to the bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prices {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--link);
+}
+
+.dish-link {
+    color: var(--olive);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.dish-link:hover {
+    color: var(--link);
+}
+.reserve-banners {
+    background:
+        linear-gradient(rgba(47, 58, 30, 0.9), rgba(47, 58, 30, 0.9)),
+        url("assets/Candlelit\ Mediterranean\ Dinner\ Table.png") center/cover no-repeat;
+    padding: 90px 20px;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+   
+}
+
+.reserve-titles {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: var(--bg);
+    margin: 8px 0 14px;
+}
+.lable-firsts {
+    color: var(--gold);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.reserve-texts {
+    color: var(--surface);
+    margin-bottom: 32px;
+}
+.reserve-banners .btn i {
+    margin-right: 8px;
+}
+.reserve-banners .btn-outline  {
+    transition: transform 0.3s;
+}
+
+.reserve-banners .btn-outline:hover  {
+    transform: rotate(15deg);
+}
+.reserve-banners .btn-outline i {
+    transition: transform 0.3s;
+}
+
+.reserve-banners .btn-outline:hover i {
+    transform: rotate(-17deg);
+}
+.reserve-banners .hero-buttons {
+    justify-content: center;   /* centers the two buttons */
+}
+
+
+/* ---------- Global fixes ---------- */
+html { scroll-behavior: smooth; }
+img  { max-width: 100%; }
+
+/* 100vw includes the scrollbar and causes sideways scrolling */
+body,
+.menu-cont,
+.reserve-banners { width: 100%; }
+
+/* Banner grows with its content instead of a fixed height */
+.menu-cont { height: auto; min-height: 50vh; }
+
+/* The fixed 70vh height made cards overflow on small screens */
+.menu-start { height: auto; padding-bottom: 20px; }
+
+/* Fluid text sizes */
+.menu-cont h1  { font-size: clamp(2.6rem, 7vw, 4.5rem); }
+.menu-text     { font-size: clamp(1rem, 2.4vw, 1.4rem); }
+.reserve-titles { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+
+/* ---------- Filter buttons: wrap instead of overflowing ---------- */
+.bnt { height: auto; padding: 0 20px; }
+
+.bnt-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.bnt-center button {
+    margin-left: 0;
+    cursor: pointer;
+    color: var(--olive-deep);
+}
+
+/* Optional: add class="active" to the selected button */
+.bnt-center button.active {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+/* ---------- Very large screens (1600px and up) ---------- */
+@media (min-width: 1600px) {
+    .menu-start {
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ---------- Laptop (max 1280px): 4 columns ---------- */
+@media (max-width: 1280px) {
+    .food-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+}
+
+/* ---------- Small laptop / large tablet (max 1024px): 3 columns ---------- */
+@media (max-width: 1024px) {
+    .food-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .menu-start {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+/* ---------- Tablet (max 992px) ---------- */
+@media (max-width: 992px) {
+    .menutitle-gold {
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+
+    .menu-card h1 { margin-left: 20px; }
+}
+
+/* ---------- Large phone / small tablet (max 768px): 2 columns ---------- */
+@media (max-width: 768px) {
+    .menu-cont {
+        min-height: 42vh;
+        padding: 70px 6%;
+        background:
+            linear-gradient(rgba(47, 58, 30, 0.8), rgba(47, 58, 30, 0.6)),
+            url("assets/Candlelit\ Mediterranean\ Dinner\ Table.png") center/cover no-repeat;
+    }
+
+    .menu-content { max-width: 100%; }
+
+    .menu-tagline {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+
+    .menu-text { margin-bottom: 0; }
+
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .menu-start {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .lable-firsts {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .reserve-banners { padding: 70px 20px; }
+}
+
+/* ---------- Phone (max 520px): 1 column ---------- */
+@media (max-width: 520px) {
+    .menu-cont { padding: 60px 20px; }
+    .menu-tagline { letter-spacing: 2px; }
+
+    .bnt { margin-top: 24px; }
+
+    .bnt-center { gap: 10px; }
+
+    .bnt-center button {
+        padding: 8px 16px;
+        font-size: 0.92rem;
+        border-radius: 14px;
+    }
+
+    .menu-start {
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-top: 6%;
+    }
+
+    .menutitle-gold {
+        font-size: 0.95rem;
+        letter-spacing: 3px;
+        margin-top: 40px;
+        margin-left: 12px;
+    }
+
+    .menu-card h1 {
+        font-size: 1.9rem;
+        margin-left: 12px;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        gap: 22px;
+        padding: 0 12px;
+    }
+
+    .dish-cards img { height: 210px; }
+
+    .reserve-banners { padding: 60px 16px; }
+
+    .hero-buttonss {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hero-buttonss .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ---------- Small phone (max 360px) ---------- */
+@media (max-width: 360px) {
+    .dish-infos { padding: 18px; }
+    .dish-infos h3 { font-size: 1.35rem; }
+    .bnt-center button { padding: 7px 14px; font-size: 0.88rem; }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+
+
+

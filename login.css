@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 75px);
+}
+
+/* ---------- Left visual ---------- */
+.login-visual {
+    background:
+        linear-gradient(to right, rgba(47, 58, 30, 0.55), rgba(47, 58, 30, 0.05)),
+        url("assets/Sunset\ Seaside\ Italian\ Table.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 40px 12%;
+}
+
+.login-visual-content {
+    max-width: 520px;
+}
+
+.login-visual h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--bg);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* gold line - leaf - line */
+.orn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 26px;
+    color: var(--gold);
+}
+
+.orn::before,
+.orn::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+}
+
+/* ---------- Right side ---------- */
+.login-side {
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 24px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 540px;
+    background: rgba(243, 235, 211, 0.35);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 44px 40px 32px;
+    box-shadow: 0 10px 30px rgba(47, 58, 30, 0.08);
+}
+
+.login-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--olive-deep);
+    line-height: 1.1;
+}
+
+.login-sub {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin: 12px 0 34px;
+}
+
+/* ---------- Form ---------- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.lf-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lf-field label {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.lf-input {
+    position: relative;
+}
+
+.lf-input input {
+    width: 100%;
+    padding: 15px 48px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.lf-input input::placeholder {
+    color: #9a9a85;
+}
+
+.lf-input input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
+}
+
+.lf-icon {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.lf-eye {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    background: none;
+    border: none;
+    color: var(--olive-deep);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.lf-eye:hover {
+    color: var(--link);
+}
+
+/* remember + forgot */
+.lf-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.92rem;
+}
+
+.lf-remember {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.lf-remember input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--olive-deep);
+    cursor: pointer;
+}
+
+.lf-link {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.lf-link:hover {
+    text-decoration: underline;
+}
+
+/* submit */
+.lf-submit {
+    width: 100%;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--olive-deep);
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.lf-submit:hover {
+    background: #dfc57e;
+    transform: translateY(-3px);
+}
+
+/* sign up */
+.lf-signup {
+    text-align: center;
+    font-size: 0.92rem;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+/* ---------- Footer additions ---------- */
+.footer-tagline {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--surface);
+    opacity: 0.85;
+    margin-top: 6px;
+}
+
+.footer-hours + .footer-tagline {
+    margin-top: 18px;
+}
+
+/* ---------- Tablet (max 900px): stack ---------- */
+@media (max-width: 900px) {
+    .login-page {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .login-visual {
+        min-height: 340px;
+        padding: 60px 8%;
+        justify-content: center;
+        text-align: center;
+        background:
+            linear-gradient(rgba(47, 58, 30, 0.6), rgba(47, 58, 30, 0.45)),
+            url("assets/login-bg.png") center/cover no-repeat;
+    }
+
+    .login-visual-content {
+        margin: 0 auto;
+    }
+
+    .orn {
+        justify-content: center;
+    }
+
+    .login-side {
+        padding: 50px 20px 60px;
+    }
+}
+
+/* ---------- Phone (max 560px) ---------- */
+@media (max-width: 560px) {
+    .login-visual {
+        min-height: 280px;
+        padding: 44px 6%;
+    }
+
+    .login-visual .hero-tagline {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+    }
+
+    .login-side {
+        padding: 36px 14px 48px;
+    }
+
+    .login-card {
+        padding: 32px 20px 26px;
+    }
+
+    .login-sub {
+        font-size: 1.05rem;
+        margin-bottom: 26px;
+    }
+
+    .lf-input input {
+        padding: 14px 44px;
+    }
+
+    .lf-options {
+        font-size: 0.88rem;
+    }
+}
+
+/* ---------- Large screens ---------- */
+@media (min-width: 1600px) {
+    .login-page {
+        min-height: 80vh;
+    }
+}
